@@ -1,0 +1,15 @@
+<p>brand-component works!</p>
+
+<div>
+    <table class="tbl" style="width:100%; border-collapse: collapse;">
+    <tr>
+        <th>کد محصول</th>
+        <th>عنوان محصول</th>
+    </tr>
+    <tr *ngFor="let brand of brands">
+        <td class="tbl" style="text-align: center;"> {{ brand.brandCode }} </td>
+        <td class="tbl" style="text-align: center;"> {{ brand.brandName }} </td>
+    </tr>
+    </table>
+    
+</div>
