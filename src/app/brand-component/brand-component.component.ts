@@ -8,11 +8,29 @@ import { Brand } from '../Models/Brand';
   styleUrls: ['./brand-component.component.scss']
 })
 export class BrandComponentComponent implements OnInit {
-  brands: Brand[] =[];
+  brands: Brand[] =[];//datasource
+  displayedColumns:any = ["brandId","brandCode","brandName"];
+  columnNames=
+  [
+  {
+    id:'brandId',
+    vaule:'کد'
+  },  
+  {
+    id:'brandCode',
+    value:'کد محصول'
+  },
+  {
+    id:'brandName',
+    value:'عنوان محصول'
+  }
+  ];
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     this.getBrandListInfo();
+
+    //this.displayedColumns=this.columnNames.map(x=>x.id);
   }
   public getBrandListInfo()
   {

@@ -1,4 +1,4 @@
-<p>brand-component works!</p>
+<h1>لیست محصولات</h1>
 
 <div>
     <table class="tbl" style="width:100%; border-collapse: collapse;">
@@ -13,3 +13,15 @@
     </table>
     
 </div>
+<hr>
+    <mat-table #table [dataSource]="brands" class="mat-elevation-z8">
+    
+        <ng-container matColumnDef="{{column.id}}" *ngFor="let column of columnNames">
+            <mat-header-cell *matHeaderCellDef> {{column.value}}</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element[column.id]}}</mat-cell>
+        </ng-container>
+        
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    </mat-table>
